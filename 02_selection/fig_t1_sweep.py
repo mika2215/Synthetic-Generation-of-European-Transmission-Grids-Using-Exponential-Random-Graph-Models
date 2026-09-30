@@ -30,7 +30,7 @@ if __name__ == '__main__':
         sub = df[df.country == c]
         for variant, style in [('without_t2', dict(color='#c8553d', ls='--', lw=3, label='without $t_2$')),
                                ('with_t2', dict(color='#2c6a8f', ls='-', lw=1.5,
-                                                label='with $t_2$ (production)'))]:
+                                                label='with $t_2$'))]:
             g = sub[sub.variant == variant].groupby('beta_t1')['t1'].mean()
             ax.plot(g.index, g.values, marker='o', ms=3.5, **style)
         ax.axvline(sub.beta_t1_fit.iloc[0], color='grey', ls=':', lw=1, label='fitted $\\beta_{t_1}$')
