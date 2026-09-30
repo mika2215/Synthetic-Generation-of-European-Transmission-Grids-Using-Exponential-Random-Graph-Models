@@ -1,0 +1,9 @@
+# Versions used for the verification of this repository (Python 3.12).
+numpy>=1.26
+scipy>=1.13
+pandas>=2.2
+networkx>=3.3
+matplotlib>=3.9
+scikit-learn>=1.5
+# only for the notebooks
+jupyter

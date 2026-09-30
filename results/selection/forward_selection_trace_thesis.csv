@@ -1,0 +1,14 @@
+step,candidate,raw_score,pen_score,added,note
+0,"(base: mLL, mLH, mHH)",0.2840712375164779,0.2840712375164779,True,
+1,sig2,0.23845637000045,0.24345637000045,True,
+1,sig2H,0.2539403876981002,0.2589403876981002,False,
+1,sig2L,0.2693056969724368,0.2743056969724368,False,
+1,t1,0.258231316993195,0.263231316993195,False,
+1,t1_HH,0.2524152023518726,0.2574152023518726,False,
+2,sig2H,0.2369686998160368,0.2469686998160369,False,
+2,sig2L,0.2565067414272019,0.2665067414272019,False,
+2,t1,0.1757719734022053,0.1857719734022054,True,
+2,t1_HH,0.1962725363176998,0.2062725363176998,False,
+3,sig2H,0.186,0.201,False,from stored NB06 cell output (not in history.pkl); no candidate beats 0.1858 -> stop
+3,sig2L,0.1944,0.2094,False,from stored NB06 cell output (not in history.pkl); no candidate beats 0.1858 -> stop
+3,t1_HH,0.1923,0.2073,False,from stored NB06 cell output (not in history.pkl); no candidate beats 0.1858 -> stop
