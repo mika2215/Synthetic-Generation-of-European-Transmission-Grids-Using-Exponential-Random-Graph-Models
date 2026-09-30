@@ -18,9 +18,10 @@ import matplotlib
 matplotlib.use('Agg')
 import matplotlib.pyplot as plt
 import numpy as np
+import pandas as pd
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
-from common.grid import MODELED_COUNTRIES, build_country_graph
+from common.grid import MODELED_COUNTRIES
 from common.paths import FIGURES_DIR, RESULTS_DIR, ensure
 
 LABELS = ['m_LL', 'm_LH', 'm_HH', 'akstar', 't1', 't2']
@@ -80,7 +81,7 @@ def grid(n_of, normalized):
 
 if __name__ == '__main__':
     ensure(FIGURES_DIR)
-    n_of = {c: build_country_graph(c).number_of_nodes() for c in MODELED_COUNTRIES}
+    n_of = pd.read_csv(RESULTS_DIR / 'tables' / 'table5_beta_bar.csv').set_index('country')['n'].to_dict()
     curated(n_of)
     grid(n_of, normalized=True)
     grid(n_of, normalized=False)

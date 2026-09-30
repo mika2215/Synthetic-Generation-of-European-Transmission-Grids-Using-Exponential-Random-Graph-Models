@@ -16,7 +16,6 @@ import matplotlib.pyplot as plt
 import pandas as pd
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
-from common.grid import build_country_graph
 from common.paths import FIGURES_DIR, RESULTS_DIR, ensure
 
 COUNTRIES = ['HR', 'BA', 'SK', 'CZ', 'AT', 'BG', 'PT', 'CH']
@@ -25,6 +24,7 @@ if __name__ == '__main__':
     ap = argparse.ArgumentParser(description=__doc__.split('\n')[0])
     ap.add_argument('--input', type=Path, default=RESULTS_DIR / 'selection' / 't1_sweep_thesis.csv')
     df = pd.read_csv(ap.parse_args().input)
+    n_of = pd.read_csv(RESULTS_DIR / 'tables' / 'table5_beta_bar.csv').set_index('country')['n']
     fig, axes = plt.subplots(2, 4, figsize=(15.9, 7.4))
     for k, (ax, c) in enumerate(zip(axes.flat, COUNTRIES)):
         sub = df[df.country == c]
@@ -37,7 +37,7 @@ if __name__ == '__main__':
         ax.set_yscale('symlog', linthresh=1)
         ax.set_ylim(bottom=0)
         ax.grid(alpha=0.3)
-        ax.set_title(f'({"abcdefgh"[k]}) {c} ($n={build_country_graph(c).number_of_nodes()}$)', fontsize=10)
+        ax.set_title(f'({"abcdefgh"[k]}) {c} ($n={n_of[c]}$)', fontsize=10)
         ax.set_xlabel('$\\beta_{t_1}$'); ax.set_ylabel('$t_1(G)$, simulated (log scale)')
     axes.flat[0].legend(fontsize=7, loc='upper left')
     fig.suptitle('Simulated triangle count $t_1(G)$ vs. $\\beta_{t_1}$, with and without $t_2$',

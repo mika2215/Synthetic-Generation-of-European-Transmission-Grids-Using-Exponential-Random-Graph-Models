@@ -56,7 +56,9 @@ All commands are run from the repository root. Runtimes refer to one CPU core.
 | Evaluation | `python 05_evaluation/fitted_terms_tau.py`, `evaluate_heldout.py`, `robustness_curves.py`, `degree_distribution_samples.py` | ~1–2 h |
 | Figures and tables | `fig*.py`, `table*.py` in each folder, or the notebooks | minutes |
 
-The figure and table scripts only read `results/`, so they run without refitting or resampling.
+The figure and table scripts in `02_selection/` to `05_evaluation/` only read `results/`, so they run
+without the raw data and without refitting or resampling; those in `01_descriptive/` build the
+graphs from the raw data.
 
 ## Where each result of the thesis comes from
 
