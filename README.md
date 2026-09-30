@@ -81,3 +81,9 @@ The figure and table scripts only read `results/`, so they run without refitting
 | Fig. 14 (S(f), BA/DE/ES) | `05_evaluation/robustness_curves.py`, `fig14_*.py` | `results/evaluation/robustness_*` |
 | Tables 6–7 (held-out statistics, R; Sections 5.2.2, 5.3) | `05_evaluation/evaluate_heldout.py`, `tables_appendix.py` | `results/evaluation/heldout_per_statistic.csv`, `results/tables/table6*, table7*` |
 | Tables 8–9 (fitted terms, Appendix A) | `05_evaluation/fitted_terms_tau.py`, `tables_appendix.py` | `results/evaluation/tau_fitted_terms.csv`, `results/tables/table8*, table9*` |
+
+## Use of AI tools
+
+The code was written with the support of the AI coding assistant Claude Code (Anthropic), as
+described in the statement on the use of artificial intelligence in the thesis. The research
+design, the analyses and all decisions on content are the author's.
